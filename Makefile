@@ -1,7 +1,7 @@
 .PHONY: all test clean
 
 dockerhub ?= jalgraves
-image_name ?= docsicecream_frontend
+image_name ?= thehubpub
 version ?= $(shell jq .version package.json)
 
 sass:
@@ -25,7 +25,7 @@ start:
 			-d \
 			--name $(image_name) \
 			--restart always \
-			-p "3034:3034" \
+			-p "3037:3037" \
 			-v "${PWD}/dist/public/css:/app/dist/public/css" \
 			-v "${PWD}/dist/public/images:/app/dist/public/images" \
 			-e API_USER=${API_USER} \
