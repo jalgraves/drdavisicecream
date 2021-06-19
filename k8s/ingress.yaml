@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: docsicecream-ingress
+  namespace: default
+spec:
+  rules:
+  - host: www.drdavisicecream.com
+    http:
+      paths:
+      - backend:
+          serviceName: docsicecream-frontend
+          servicePort: 3034
+  - host: drdavisicecream.com
+    http:
+      paths:
+      - backend:
+          serviceName: docsicecream-frontend
+          servicePort: 3034
