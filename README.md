@@ -1,3 +1,3 @@
-# The Hub Pub
+# Dr. Davis Ice Cream
 
-TheHubPub.com
+DrDavisIceCream.com

@@ -1,8 +1,8 @@
 .PHONY: all test clean
 
 dockerhub ?= jalgraves
-image_name ?= thehubpub
-version ?= $(shell jq .version package.json)
+image_name ?= drdavisicecream
+version ?= $(shell jq -r .version package.json)
 
 sass:
 		sass ${PWD}/src/sass/jal.sass ${PWD}/dist/public/css/style.css

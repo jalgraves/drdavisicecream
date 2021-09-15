@@ -1,6 +1,6 @@
 {
-  "name": "node-argos",
-  "version": "0.1.0",
+  "name": "node-docs",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "start": "node -r dotenv/config ./bin/server dotenv_config_path=/app/.env",

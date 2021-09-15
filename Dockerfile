@@ -32,6 +32,6 @@ COPY --from=install /app/dist/public/js/main.js /app/dist/public/js/
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-s", "--"]
-EXPOSE 3037
+EXPOSE 3034
 USER node
 CMD ["npm", "run", "start"]
