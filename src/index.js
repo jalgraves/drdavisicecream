@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { MainInfo, AboutInfo, ContactInfo, OurTeam, Services, Friends, FAQ } from './components/pages'
-import { HeroHeader, Footer } from './components/common'
+import { MainInfo, AboutInfo, ContactInfo } from './components/content/main'
+import { HeroHeader, Footer } from './components/content/common'
 import { TopMenuBar, LinkList, TopNavBar, linkProps } from './components/TopBar'
-require('dotenv').config()
+
 const config = require('./config.json')
 const PAGES = config.drdavisicecream.pages
 const STATIC_URL = config.drdavisicecream.static_url
@@ -60,7 +60,7 @@ ReactDOM.render(
 
 if (document.getElementById('heroHeader')) {
     ReactDOM.render(
-        <HeroHeader/>,
+        <HeroHeader borderBottom={`.5rem solid ${COLORS.yellow}`}/>,
         document.getElementById('heroHeader')
     )
 }

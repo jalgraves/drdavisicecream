@@ -5,7 +5,7 @@ image_name ?= drdavisicecream
 version ?= $(shell jq -r .version package.json)
 
 sass:
-		sass ${PWD}/src/sass/drdavisicecream.sass ${PWD}/dist/public/css/style.css
+		sass ${PWD}/src/sass/style.sass ${PWD}/dist/public/css/style.css
 
 stop:
 		docker rm -f $(image_name) || true
