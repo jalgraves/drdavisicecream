@@ -35,7 +35,7 @@ export const AboutInfo = () => {
     return (
         <div>
             <InfoSection
-                marginTop="1rem"
+                marginTop="3rem"
                 bgColor="transparent"
                 h1Color={COLORS.yellow}
                 h1LetterSpacing=".3rem"
@@ -63,7 +63,7 @@ export const ContactInfo = () => {
     return (
         <div>
             <InfoSection
-                marginTop="1rem"
+                marginTop="3rem"
                 bgColor="transparent"
                 h1Color={COLORS.yellow}
                 h1LetterSpacing=".3rem"

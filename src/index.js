@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { MainInfo, AboutInfo, ContactInfo } from './components/content/main'
 import { HeroHeader, Footer } from './components/content/common'
 import { TopMenuBar, LinkList, TopNavBar, linkProps } from './components/TopBar'
+import Routes from './reactRoutes'
 
 const config = require('./config.json')
 const PAGES = config.drdavisicecream.pages
@@ -58,30 +58,14 @@ ReactDOM.render(
     document.getElementById('footer')
 )
 
+ReactDOM.render(
+    <Routes />,
+    document.getElementById('app')
+)
+
 if (document.getElementById('heroHeader')) {
     ReactDOM.render(
         <HeroHeader borderBottom={`.5rem solid ${COLORS.yellow}`}/>,
         document.getElementById('heroHeader')
-    )
-}
-
-if (document.getElementById('aboutInfo')) {
-    ReactDOM.render(
-        <AboutInfo/>,
-        document.getElementById('aboutInfo')
-    )
-}
-
-if (document.getElementById('contactInfo')) {
-    ReactDOM.render(
-        <ContactInfo/>,
-        document.getElementById('contactInfo')
-    )
-}
-
-if (document.getElementById('mainInfo')) {
-    ReactDOM.render(
-        <MainInfo/>,
-        document.getElementById('mainInfo')
     )
 }
