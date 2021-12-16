@@ -1,6 +1,6 @@
 {
   "name": "node-docs",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "scripts": {
     "start": "node -r dotenv/config ./bin/server dotenv_config_path=/app/.env",
