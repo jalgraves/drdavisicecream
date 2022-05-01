@@ -15,10 +15,10 @@ export const MainInfo = () => {
                     <h1>Doc's Pepperell</h1>
                     <h2>67 Hollis Street<br />Pepperell MA, 01463</h2>
                     <h2>Open 12 to 9 Daily</h2>
-                    <h2>Closing for season at end of September</h2>
+                    <h2>Season opening Saturday May 7th!</h2>
                     <h1>Doc's Brookline</h1>
                     <h2>75 Route 13 <br />Brookline, NH 03033</h2>
-                    <h2>Closed for the season</h2>
+                    <h2>Opening Soon!</h2>
                 </section>
             </InfoSection>
         </div>
