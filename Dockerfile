@@ -16,7 +16,7 @@ ENV GOOGLE_API_KEY=${google_api_key}
 
 COPY ./package* /app/
 WORKDIR /app
-RUN npm ci --save-dev
+RUN npm ci --save-dev --production=false
 COPY . ./
 
 RUN npx webpack --config webpack.config.js && \
