@@ -34,7 +34,7 @@ export const StyledInfo = styled.div`
     h2 {
         padding: .5rem 0;
         max-width: 80vw;
-        font-family: gotham;
+        font-family: Poppins;
         font-size: 2em;
         line-height: 170%;
         text-align: ${props => props.textAlign || "initial"};
@@ -59,7 +59,7 @@ export const StyledInfo = styled.div`
     h4 {
         padding: .5rem 0;
         max-width: 40rem;
-        font-family: gotham;
+        font-family: Poppins;
         font-size: 1.75rem;
         text-transform: none;
         line-height: 170%;
@@ -78,7 +78,7 @@ export const StyledInfo = styled.div`
     h6 {
         padding: .5rem 0;
         max-width: 40rem;
-        font-family: gotham;
+        font-family: Poppins;
         font-size: .75rem;
         text-transform: none;
         line-height: 170%;
@@ -87,21 +87,21 @@ export const StyledInfo = styled.div`
     a {
         text-decoration: none;
         color: ${props => props.linkColor || COLORS.cyan};
-        font-family: gotham-medium;
+        font-family: Poppins;
         text-transform: capitalize;
     }
     article {
         padding: 2rem 0 0 0;
         max-width: 50rem;
         text-transform: none;
-        font-family: gotham-medium;
+        font-family: Poppins;
     }
     p {
         padding: .5rem 0;
         max-width: 50rem;
         color: ${props => props.fontColor || COLORS.black};
         text-transform: none;
-        font-family: gotham-medium;
+        font-family: Poppins;
         font-size: 1.2rem;
     }
     @media (min-width: 320px)
