@@ -18,6 +18,8 @@ module.exports = env => {
   return {
     plugins: [
       new webpack.DefinePlugin({
+        "process.env.ENV": JSON.stringify(process.env.NODE_ENV),
+        "process.env.GOOGLE_API_KEY": JSON.stringify(process.env.GOOGLE_API_KEY),
         "process.env.SQUARE_APP_ID": JSON.stringify(process.env.SQUARE_APP_ID),
         "process.env.MERCH_API_URL": JSON.stringify(merchApiUrl),
         "process.env.MENU_API_URL": JSON.stringify(menuApiUrl),
