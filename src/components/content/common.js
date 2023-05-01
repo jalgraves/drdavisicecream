@@ -79,7 +79,7 @@ export const Footer = () => {
         <StyledFooter fontColor="white" backgroundColor="transparent">
             <footer>
                 <h4>Family Owned and Operated</h4>
-                <img src="https://static.dev.beantownpub.com/img/logos/drdavisicecream_logo.png" alt="Doc's ice cream logo" />
+                <img src="https://static.prod.beantownpub.com/img/logos/drdavisicecream_logo.png" alt="Doc's ice cream logo" />
                 <h3>67 Hollis St. Pepperell MA</h3>
                 <h2>Call: 978-433-6315</h2>
                 <h2>Stay Connected</h2>

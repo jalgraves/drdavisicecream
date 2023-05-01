@@ -23,7 +23,8 @@ export const MainInfo = () => {
                     <h2>Closed for the season, see you in the spring!</h2>
                     <h1>Doc's Brookline</h1>
                     <h2>75 Route 13 <br />Brookline, NH 03033</h2>
-                    <h2>Closed for the season, see you in the spring!</h2>
+                    <h2>Opening Saturday May 6th!</h2>
+                    <h2>hours 12 to 9 daily</h2>
                 </section>
             </InfoSection>
         </div>

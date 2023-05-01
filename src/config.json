@@ -1,10 +1,10 @@
 {
     "drdavisicecream": {
-        "static_url": "https://static.dev.beantownpub.com",
+        "static_url": "https://static.prod.beantownpub.com",
         "urls": {
             "googleApi": "https://maps.googleapis.com/maps/api/",
             "contactApi": "https://contact-api.jalgraves.com/v1/contact/beantown",
-            "static": "https://static.dev.beantownpub.com",
+            "static": "https://static.prod.beantownpub.com",
             "facebook": "https://www.facebook.com/Doc-Davis-Ice-Cream-Stand-115542725133788/",
             "instagram": "https://www.instagram.com/drdavisicecream/",
             "twitter": "https://twitter.com/DrDavisIceCream"

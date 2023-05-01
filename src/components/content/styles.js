@@ -137,7 +137,7 @@ export const StyledHero = styled.div`
     height: 420px;
     display: flex;
     flex-flow: column wrap;
-    background-image: url(${props => props.image || "https://static.dev.beantownpub.com/img/drdavisicecream_hero_header.jpg"});
+    background-image: url(${props => props.image || "https://static.prod.beantownpub.com/img/drdavisicecream_hero_header.jpg"});
     background-size: cover;
     background-position: center;
     border-bottom: ${props => props.borderBottom || "unset"};
