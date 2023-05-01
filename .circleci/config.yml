@@ -35,7 +35,7 @@ commands:
       - run:
           name: Install dependencies
           command: |
-            apt-get update && apt-get install -y git jq
+            sudo apt-get update && apt-get install -y git jq
   check_tags:
     description: Check if git tag matches package.json version
     steps:
