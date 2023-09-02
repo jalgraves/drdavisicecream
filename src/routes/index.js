@@ -1,7 +1,8 @@
-var express = require('express')
-var router = express.Router()
-var config = require('./config.json')
-var sections = config.sections
+import express from 'express'
+import { config } from '../utils/main.js'
+
+const router = express.Router()
+const sections = config.sections
 
 router.use(function (req, res, next) {
   next()
@@ -9,11 +10,13 @@ router.use(function (req, res, next) {
 
 router.get('/', function(req, res, next) {
   const home = sections.home
+  console.log(home)
   res.render(home.template, home.metadata)
 })
 
 router.get('/index', function(req, res, next) {
   const home = sections.home
+  console.log(home)
   res.render(home.template, home.metadata)
 })
 
@@ -67,4 +70,4 @@ router.get('/parties.html', function (req, res, next) {
   res.render(parties.template, parties.metadata)
 })
 
-module.exports = router
+export default router

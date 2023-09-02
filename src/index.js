@@ -1,71 +1,43 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { HeroHeader, Footer } from './components/content/common'
-import { TopMenuBar, LinkList, TopNavBar, linkProps } from './components/TopBar'
-import Routes from './reactRoutes'
+import { HeroHeader, Footer } from './components/content/common.js'
+import ReactRoutes from './reactRoutes.js'
+import { MainMenuBar } from './components/topBar/index.js'
+import { canvas, Clouds } from './components/cloudsBg.js'
+import { config } from './utils/main.js'
 
-const config = require('./config.json')
-const PAGES = config.drdavisicecream.pages
-const STATIC_URL = config.drdavisicecream.static_url
-const COLORS = config.drdavisicecream.colors
-
-function topMenu() {
-    return (
-        <div >
-            <img src={STATIC_URL + "/img/logos/drdavisicecream_logo.png"}  alt="Doc's ice cream logo" />
-        </div>
-    )
-}
-
-function navBar() {
-    return (
-        <TopNavBar
-            fontColor={COLORS.yellow}
-            hoverColor={COLORS.red}
-            props={linkProps(PAGES, 'top_menu')}
-        />
-    )
-}
-
-const menuList = <LinkList props={linkProps(PAGES, 'menu_list')} />
-
-function navBarLogo() {
-    var imgStyles = {position: 'absolute', padding: '.25em'}
-    return (
-        <a href="/">
-            <img style={imgStyles} src={STATIC_URL + "/img/logos/drdavisicecream_navbar_logo.gif"}  alt="Doc's ice cream logo" />
-        </a>
-    );
-}
-
-require('./components/cloudsBg')
+const PAGES = config.pages
+const COLORS = config.colors
 
 ReactDOM.render(
-    <TopMenuBar
-        bottomMenu=''
-        fontColor={COLORS.yellow}
-        navBarLogo={navBarLogo()}
-        topMenu={topMenu()}
-        menuList={menuList}
-        navBar={navBar()}
-        barColor={COLORS.navBarBlue}
-        menuColor={COLORS.gray} />,
-    document.getElementById('topBar')
+  <MainMenuBar
+    pages={PAGES}
+    fontColor={COLORS.yellow}
+    barColor={COLORS.navBarBlue}
+    menuColor={COLORS.navBarMenuBackgroundGray}
+    menuFontColor={COLORS.navBarBlue}
+    menuLinkHoverColor={COLORS.red}
+    navBarLogoImgPath="/img/logos/drdavisicecream_navbar_logo.gif"
+    slideMenuLogoImgPath="/img/logos/drdavisicecream_logo.png"
+  />,
+  document.getElementById("topBar")
+)
+
+Clouds(canvas)
+
+ReactDOM.render(
+  <Footer/>,
+  document.getElementById('footer')
 )
 
 ReactDOM.render(
-    <Footer/>,
-    document.getElementById('footer')
-)
-
-ReactDOM.render(
-    <Routes />,
-    document.getElementById('app')
+  <ReactRoutes />,
+  document.getElementById("app")
 )
 
 if (document.getElementById('heroHeader')) {
-    ReactDOM.render(
-        <HeroHeader borderBottom={`.5rem solid ${COLORS.yellow}`}/>,
-        document.getElementById('heroHeader')
-    )
+  ReactDOM.render(
+    <HeroHeader borderBottom={`.5rem solid ${COLORS.yellow}`}/>,
+    document.getElementById('heroHeader')
+  )
 }

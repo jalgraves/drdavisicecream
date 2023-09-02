@@ -1,117 +1,113 @@
 import styled from 'styled-components'
+import { config } from '../../utils/main.js'
 
-const config = require('../../config.json')
-
-const COLORS = config.drdavisicecream.colors
+const COLORS = config.colors
+const FONTS = config.fonts
 
 export const StyledInfo = styled.div`
-    margin-top: ${props => props.marginTop || "auto"};
-    margin-bottom: ${props => props.marginBottom || "auto"};
-    margin-left: ${props => props.marginLeft || "auto"};
-    margin-right: ${props => props.marginRight || "auto"};
-    padding-top: ${props => props.paddingTop || "2rem"};
-    padding-bottom: ${props => props.paddingBottom || "2rem"};
-    padding-left: ${props => props.paddingLeft || "4rem"};
-    padding-right: ${props => props.paddingRight || "1rem"};
-    background-color: ${props => props.color || "#F3F4F4"};
-    width: 100vw;
-    display: flex;
-    flex-flow: column wrap;
-    font-family: 'Newsreader', serif;
-    letter-spacing: .12rem;
-    color: ${props => props.fontColor || "black"};
+  margin-top: ${props => props.marginTop || "auto"};
+  margin-bottom: ${props => props.marginBottom || "auto"};
+  margin-left: ${props => props.marginLeft || "auto"};
+  margin-right: ${props => props.marginRight || "auto"};
+  padding-top: ${props => props.paddingTop || "2rem"};
+  padding-bottom: ${props => props.paddingBottom || "2rem"};
+  padding-left: ${props => props.paddingLeft || "4rem"};
+  padding-right: ${props => props.paddingRight || "1rem"};
+  background: ${COLORS.yellow};
+  background-color: ${props => props.color || COLORS.yellow};
+  width: 100vw;
+  display: flex;
+  flex-flow: column wrap;
+  font-family: ${FONTS.button};
+  letter-spacing: .12rem;
+  text-transform: uppercase;
+  color: ${props => props.fontColor || COLORS.black};
+  line-height: 170%;
+  h1 {
+    padding: .5rem 0;
+    font-size: 3em;
+    font-family: ${FONTS.button};
+    font-weight: 900;
     line-height: 170%;
+  }
+  h2 {
+    padding: .5rem 0;
+    max-width: 80vw;
+    font-family: ${FONTS.content};
+    font-size: 2em;
+    line-height: 170%;
+    text-align: ${props => props.textAlign || "initial"};
+    span {
+      color: ${COLORS.red};
+    }
+  }
+  h3 {
+    padding: 1rem 0;
+    max-width: 80vw;
+    font-family: ${FONTS.headline};
+    font-size: 2em;
+    line-height: 170%;
+    letter-spacing: .25rem;
+  }
+  h4 {
+    padding: .5rem 0;
+    max-width: 40rem;
+    font-family: ${FONTS.content};
+    font-size: 1.75rem;
+    text-transform: none;
+    line-height: 170%;
+  }
+  h5 {
+    padding: .5rem 0;
+    max-width: 40rem;
+    font-family: ${FONTS.script};
+    font-size: 1.75rem;
+    letter-spacing: unset;
+    text-transform: none;
+    line-height: 170%;
+  }
+  h6 {
+    padding: .5rem 0;
+    max-width: 40rem;
+    font-family: ${FONTS.content};
+    font-size: .75rem;
+    text-transform: none;
+    line-height: 170%;
+  }
+  a {
+    text-decoration: none;
+    color: ${COLORS.dodgerBlue};
+    font-family: ${FONTS.content};
+    text-transform: capitalize;
+  }
+  a:hover {
+  color: ${COLORS.red};
+  }
+  article {
+    font-family: ${FONTS.content};
+    font-size: 150%;
+    font-weight: 600;
+    line-height: 150%;
+    padding: 2rem 0 0 0;
+    max-width: 80vw;
+    text-transform: none;
+  }
+  p {
+    padding: .5rem 0;
+    max-width: 50rem;
+    color: ${COLORS.white};
+    text-transform: none;
+    font-family: ${FONTS.content};
+    font-size: 1.2rem;
+  }
+  @media (min-width: 320px)
+  and (max-width: 768px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
     h1 {
-        padding: .5rem 0;
-        max-width: 80%;
-        font-size: 2.5em;
-        font-family: gotham-narrow-ultra;
-        line-height: 170%;
-        color: ${props => props.h1Color || COLORS.black};
-        text-transform: ${props => props.h1TextTransform || "initial"};
-        letter-spacing: ${props => props.h1LetterSpacing || "initial"};
+      font-size: 2rem;
     }
-    h2 {
-        padding: .5rem 0;
-        max-width: 80vw;
-        font-family: Poppins;
-        font-size: 2em;
-        line-height: 170%;
-        text-align: ${props => props.textAlign || "initial"};
-        color: ${props => props.h2Color || COLORS.black};
-        text-transform: ${props => props.h2TextTransform || "initial"};
-        letter-spacing: ${props => props.h2LetterSpacing || "initial"};
-        span {
-            color: ${COLORS.red};
-        }
-    }
-    h3 {
-        padding: 1rem 0;
-        max-width: 80vw;
-        font-family: gotham-narrow-ultra;
-        font-size: 2em;
-        line-height: 170%;
-        letter-spacing: .25rem;
-        color: ${props => props.h3Color || COLORS.black};
-        text-transform: ${props => props.h3TextTransform || "initial"};
-        letter-spacing: ${props => props.h3LetterSpacing || "initial"};
-    }
-    h4 {
-        padding: .5rem 0;
-        max-width: 40rem;
-        font-family: Poppins;
-        font-size: 1.75rem;
-        text-transform: none;
-        line-height: 170%;
-        color: ${props => props.h4Color || COLORS.black};
-    }
-    h5 {
-        padding: .5rem 0;
-        max-width: 40rem;
-        font-family: satisfy;
-        font-size: 1.75rem;
-        letter-spacing: unset;
-        text-transform: none;
-        line-height: 170%;
-        color: ${props => props.h5Color || COLORS.black};
-    }
-    h6 {
-        padding: .5rem 0;
-        max-width: 40rem;
-        font-family: Poppins;
-        font-size: .75rem;
-        text-transform: none;
-        line-height: 170%;
-        color: ${props => props.h6Color || COLORS.black};
-    }
-    a {
-        text-decoration: none;
-        color: ${props => props.linkColor || COLORS.cyan};
-        font-family: Poppins;
-        text-transform: capitalize;
-    }
-    article {
-        padding: 2rem 0 0 0;
-        max-width: 50rem;
-        text-transform: none;
-        font-family: Poppins;
-    }
-    p {
-        padding: .5rem 0;
-        max-width: 50rem;
-        color: ${props => props.fontColor || COLORS.black};
-        text-transform: none;
-        font-family: Poppins;
-        font-size: 1.2rem;
-    }
-    @media (min-width: 320px)
-    and (max-width: 768px)
-    and (orientation: portrait)
-    and (-webkit-min-device-pixel-ratio: 2) {
-        h1 {
-            font-size: 2rem;
-        }
-    }
+  }
 `
 
 

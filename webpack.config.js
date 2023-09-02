@@ -1,29 +1,18 @@
-const path = require('path')
-const webpack = require('webpack')
-var merchApiUrl
-var contactApiUrl
-var menuApiUrl
+import path from 'path'
+import webpack from 'webpack'
+import { fileURLToPath } from 'url'
 
-if (process.env.NODE_ENV === 'production') {
-  merchApiUrl = 'https://merch.jalgraves.com'
-  contactApiUrl = 'https://merch.jalgraves.com'
-  menuApiUrl = 'https://merch.jalgraves.com'
-} else {
-  merchApiUrl = 'http://localhost:5000'
-  contactApiUrl = 'https://locahost:5004'
-  menuApiUrl = 'http://localhost:5012'
-}
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
-module.exports = env => {
+export default env => {
   return {
     plugins: [
       new webpack.DefinePlugin({
         "process.env.ENV": JSON.stringify(process.env.NODE_ENV),
         "process.env.GOOGLE_API_KEY": JSON.stringify(process.env.GOOGLE_API_KEY),
-        "process.env.SQUARE_APP_ID": JSON.stringify(process.env.SQUARE_APP_ID),
-        "process.env.MERCH_API_URL": JSON.stringify(merchApiUrl),
-        "process.env.MENU_API_URL": JSON.stringify(menuApiUrl),
-        "process.env.CONTACT_API_URL": JSON.stringify(contactApiUrl)
+        "process.env.GIT_HASH": JSON.stringify(process.env.GIT_HASH),
+        "process.env.VERSION": JSON.stringify(process.env.VERSION)
       })
     ],
     mode: process.env.NODE_ENV,
@@ -33,7 +22,9 @@ module.exports = env => {
       path: path.resolve(__dirname, 'dist/public/js'),
     },
     node: {
-      fs: 'empty'
+      global: true,
+      __filename: true,
+      __dirname: true
     },
     module: {
       rules: [
@@ -49,4 +40,4 @@ module.exports = env => {
       ]
     }
   }
-};
+}
