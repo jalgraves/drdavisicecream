@@ -8,7 +8,7 @@ import {
   StyledFooter } from './styles.js'
 import { config } from '../../utils/main.js'
 const STATIC_URL = config.static_url
-const COLORS = config.colors
+// const COLORS = config.colors
 
 export const InfoSection = (props) => {
   return (

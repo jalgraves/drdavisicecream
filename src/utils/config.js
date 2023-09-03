@@ -68,10 +68,13 @@ const config = {
   },
   "colors": {
       "yellow": "rgb(252,204,18)",
+      "primaryYellow": "rgb(252,204,18)",
       "gray": "#494040",
       "red": "#c70039",
       "navBarBlue": "rgba(5,46,102,0.90)",
+      "primaryBlue": "rgba(5,46,102,0.90)",
       "navBarMenuBackgroundGray": "rgb(248 248 248)",
+      "primaryGray": "rgb(248 248 248)",
       "blue": "#1f6696",
       "lightGray": "#F3F4F4",
       "darkGray": "#888888",
@@ -81,7 +84,7 @@ const config = {
   },
   "fonts": {
     "button": "'gotham-narrow-ultra', Poppins, sans-serif",
-    "content": "'Lato', sans-serif",
+    "content": "'gotham-medium', Lato, sans-serif",
     "footer": "'Raleway', Arial, sans-serif",
     "headline": "'Poppins', sans-sefif",
     "script": "'Satisfy', cursive;"

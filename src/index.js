@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { HeroHeader, Footer } from './components/content/common.js'
 import ReactRoutes from './reactRoutes.js'
 import { MainMenuBar } from './components/topBar/index.js'
-import { canvas, Clouds } from './components/cloudsBg.js'
+import { canvas, Clouds } from './components/backgrounds/cloudsBg.js'
 import { config } from './utils/main.js'
 
 const PAGES = config.pages
