@@ -1,5 +1,4 @@
 import React from 'react'
-import { InfoSection } from './common.js'
 import { ContentSection } from './contentBlocks/index.js'
 import { Map, BrooklineMap } from './map.js'
 import { HeroHeader } from './heroHeader/main.js'
@@ -11,11 +10,14 @@ const FONTS = config.fonts
 export const MainInfo = () => {
   return (
       <ContentSection
-        aria-details="ContentSection"
-        backgroundColor="transparent"
+        ariaDetails="MainInfo"
+        articleMargin="auto"
+        backgroundColor="rgba(248, 248, 248, 0.5)"
+        borderRadius="4px"
         display="flex"
         flexFlow="column wrap"
-        h1Color={COLORS.yellow}
+        fontFamily={FONTS.content}
+        h1Color={COLORS.primaryYellow}
         h1FontFamily={FONTS.headline}
         h1FontSize="3rem"
         h1FontWeight="900"
@@ -24,67 +26,52 @@ export const MainInfo = () => {
         h1Padding="1rem"
         h1LetterSpacing=".3rem"
         h1TextTransform="uppercase"
+        h1TextShadow="rgb(0, 0, 0) 2px 2px 6px;"
         h2Color={COLORS.black}
         h2FontFamily={FONTS.content}
         h2FontSize="2rem"
-        h2FontWeight="bold"
+        h2FontWeight="600"
+        h2TextAlign="left"
+        h2LetterSpacing=".3rem"
         h2LineHeight="150%"
+        h2TextShadow="rgb(0, 0, 0) 2px 2px 6px;"
+        h2TextTransform="uppercase"
         h2Margin="auto"
-        h2Padding="1rem"
-        margin="3rem auto 1rem auto"
+        h2Padding="2rem"
+        h3Color={COLORS.primaryRed}
+        h3FontSize="2rem"
+        h3FontWeight="600"
+        h3LetterSpacing=".3rem"
+        h3LineHeight="150%"
+        h3TextTransform="uppercase"
+        h3TextShadow="rgb(0, 0, 0) 2px 2px 6px;"
+        h3Margin="auto"
+        margin="2rem auto 2rem auto"
+        outline={`.2rem solid ${COLORS.primaryYellow}`}
         padding="2rem"
         textAlign="center"
         width="80vw"
       >
-        <section>
-          <h1>Doc's Pepperell</h1>
-          <h2>67 Hollis Street<br />Pepperell MA, 01463</h2>
-          <h2>Opening Saturday May 6th!</h2>
-          <h2>hours 12 to 9 daily</h2>
-        </section>
+        <h1>Doc's Pepperell</h1>
+        <h2>67 Hollis Street<br />Pepperell MA, 01463</h2>
+        <h3>Now Open!</h3>
+        <h2>Hours 12 to 9 Daily</h2>
       </ContentSection>
   )
 }
 
 
 
-export const FAQ = () => {
-  return (
-    <div>
-      <InfoSection bgColor={COLORS.softGray} marginTop='5rem'>
-        <section>
-          <article>
-          Frequently Asked Questions
-          </article>
-        </section>
-      </InfoSection>
-      <InfoSection bgColor={COLORS.softGray} fontColor='#000000'>
-        <section>
-          <h3>Frequently Asked Questions</h3>
-          <h4>Do you accept credit cards yes?</h4>
-          <p>Yes.</p>
-          <h4>Do you have a public restroom?</h4>
-          <p>Unfortunately we do not, please plan accordingly.</p>
-          <h4>Do you sell ice cream I can take home?</h4>
-          <p>Yes! We sell premade quarts which are limited to the flavors available but we also sell hand-packed pints and quarts that are available in any flavor.</p>
-          <h4>Can I have a job?</h4>
-          <p>If you would like to apply for a job please come see us in person.</p>
-        </section>
-      </InfoSection>
-    </div>
-  )
-}
+
 
 export const ErrorPage = () => {
   return (
-    <div>
-      <InfoSection bgColor={COLORS.softGray}>
-        <section>
-          <h1>Dr. Davis Ice Cream</h1>
-          <h2>Something has gone awry</h2>
-          <h2>The site developer has made a mistake and apologizes in advance for the inconvenience</h2>
-        </section>
-      </InfoSection>
-    </div>
+    <ContentSection bgColor={COLORS.softGray}>
+      <section>
+        <h1>Dr. Davis Ice Cream</h1>
+        <h2>Something has gone awry</h2>
+        <h2>The site developer has made a mistake and apologizes in advance for the inconvenience</h2>
+      </section>
+    </ContentSection>
   )
 }

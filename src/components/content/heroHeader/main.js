@@ -1,10 +1,53 @@
 import React from 'react'
-import { StyledHero } from './styles.js'
+import { ContentSection } from '../contentBlocks/index.js'
+import { config } from '../../../utils/index.js'
 
-export const HeroHeader = (props) => {
-    return (
-        <StyledHero image={props.image}>
-            <h1>{props.children}</h1>
-        </StyledHero>
-    )
+const COLORS = config.colors
+const FONTS = config.fonts
+
+export const HeroHeader = () => {
+  const year = new Date().getFullYear()
+  const gitHash = process.env.GIT_HASH
+  const version = process.env.VERSION
+  return (
+    <ContentSection
+      ariaDetails="HeroHeader"
+      backgroundColor="rgba(248, 248, 248, 0.5)"
+      borderBottom={`.3rem solid ${COLORS.yellow}`}
+      display="flex"
+      flexFlow="column wrap"
+      fontSize="150%"
+      h1Color={COLORS.yellow}
+      h1FontFamily={FONTS.script}
+      h1FontSize="2.5rem"
+      h1FontWeight="900"
+      h1LineHeight="150%"
+      h1Margin="auto"
+      h1Padding=".5rem"
+      h1LetterSpacing=".3rem"
+      h1TextShadow="rgb(0, 0, 0) 2px 2px 6px"
+      h2Color={COLORS.cyan}
+      h2FontFamily={FONTS.button}
+      h2FontSize="2.5rem"
+      h2FontWeight="900"
+      h2LetterSpacing=".3rem"
+      h2LineHeight="150%"
+      h2TextShadow="rgb(0, 0, 0) 2px 2px 8px"
+      h2TextTransform="uppercase"
+      h2Margin="auto"
+      h2Padding=".5rem"
+      headerImgMaxWidth="80vw"
+      headerImgPadding="1rem"
+      margin="1rem auto 1rem auto"
+      padding="4rem"
+      textAlign="center"
+      width="100vw"
+    >
+      <header>
+        <img src={`${config.urls.static}/img/logos/drdavisicecream_second_logo.gif`}  alt="Doc's ice cream logo" />
+        <h1>Making and serving our own ice cream for over 80 years!</h1>
+        <h2>Home of the Doc's Special</h2>
+      </header>
+    </ContentSection>
+  )
 }

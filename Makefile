@@ -19,11 +19,13 @@ ifeq ($(env),dev)
 	node_env = development
 	context = ${DEV_CONTEXT}
 	namespace = ${DEV_NAMESPACE}
+	platform = linux/arm64
 else ifeq ($(env), prod)
 	image_tag = $(version)
 	node_env = production
 	context = ${PROD_CONTEXT}
 	namespace = ${PROD_NAMESPACE}
+	platform = linux/amd64
 endif
 
 lint:
@@ -37,12 +39,20 @@ build: sass
 	@echo "\033[1;32m. . . Building $(image_name):$(image_tag)  . . .\033[1;37m\n"
 	@echo "\033[1;32mNode Env: $(node_env)\033[1;37m\n"
 	docker build \
-		--platform linux/x86_64 \
+		--platform linux/amd64 \
 		-t $(image_name):$(image_tag) \
 		--build-arg node_env=$(node_env) \
 		--build-arg git_hash=$(git_hash) \
 		--build-arg google_api_key=${GOOGLE_API_KEY} \
 		--build-arg version=$(version) .
+
+## Start docker container
+docker/run:
+	docker run --rm --name $(image_name) -p $(port):$(port) $(image_name):$(image_tag)
+
+## Stop docker container
+docker/stop:
+	docker rm -f $(image_name)
 
 ## Build and tag image and push to dockerhub
 publish: build

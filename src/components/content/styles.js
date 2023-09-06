@@ -99,6 +99,7 @@ export const StyledInfo = styled.div`
     text-transform: none;
     font-family: ${FONTS.content};
     font-size: 1.2rem;
+    text-shadow: rgb(0, 0, 0) 2px 2px 6px;
   }
   @media (min-width: 320px)
   and (max-width: 768px)
@@ -129,7 +130,7 @@ export const StyledLinkButton = styled.div`
 
 export const StyledHero = styled.div`
     margin: 5rem auto 0 auto;
-    width: 100%;
+    width: 100vw;
     height: 420px;
     display: flex;
     flex-flow: column wrap;
@@ -175,45 +176,48 @@ export const StyledHero = styled.div`
 `
 
 export const StyledFooter = styled.div`
-    margin: auto;
-    padding: 2rem 0;
-    width: 100%;
+  margin: auto;
+  padding: 2rem 0;
+  display: flex;
+  flex-flow: column wrap;
+  border-top: .2rem solid #fcba03;
+  background-color: ${props => props.backgroundColor || "white"};
+  justify-content: center;
+  footer {
+    color: ${props => props.fontColor || "#1f6696"};
     display: flex;
-    border-top: .2rem solid #fcba03;
-    background-color: ${props => props.backgroundColor || "white"};
-    footer {
-        margin: auto;
-        font-family: 'Raleway', Arial, sans-serif;
-        text-transform: uppercase;
-        color: ${props => props.fontColor || "#1f6696"};
-        text-align: center;
-        letter-spacing: .2em;
-    }
-    img {
-        margin: auto;
-        padding: .5rem 0;
-        max-width: 20rem;
-    }
-    h2 {
-        margin: 1rem auto;
-        text-shadow: 2px 2px 4px ${COLORS.black};
-    }
-    h3 {
-        margin: auto;
-        padding: .5rem 0;
-        font-size: 1.65em;
-        text-shadow: 2px 2px 4px ${COLORS.black};
-    }
-    h4 {
-        margin: auto;
-        padding: 1rem 0;
-        font-family: 'Raleway', Arial, sans-serif;
-        font-size: 2rem;
-        color: ${props => props.fontColor || "#1f6696"};
-        text-transform: capitalize;
-        letter-spacing: none;
-        text-shadow: 2px 2px 4px ${COLORS.black};
-    }
+    font-family: 'Raleway', Arial, sans-serif;
+    letter-spacing: .2em;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  img {
+      margin: auto;
+      padding: .5rem 0;
+      max-width: 20rem;
+  }
+  h2 {
+      margin: 1rem auto;
+      text-shadow: 2px 2px 4px ${COLORS.black};
+  }
+  h3 {
+      margin: auto;
+      padding: .5rem 0;
+      font-size: 1.65em;
+      text-shadow: 2px 2px 4px ${COLORS.black};
+  }
+  h4 {
+      margin: auto;
+      padding: 1rem 0;
+      font-family: 'Raleway', Arial, sans-serif;
+      font-size: 2rem;
+      color: ${props => props.fontColor || "#1f6696"};
+      text-transform: capitalize;
+      letter-spacing: none;
+      line-height: 150%;
+      text-shadow: 2px 2px 4px ${COLORS.black};
+  }
 `
 
 export const StyledAnchor = styled.div`

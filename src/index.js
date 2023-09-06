@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { HeroHeader, Footer } from './components/content/common.js'
+import { HeroHeader } from './components/content/heroHeader/index.js'
+import { Footer } from './components/content/footer/index.js'
 import ReactRoutes from './reactRoutes.js'
 import { MainMenuBar } from './components/topBar/index.js'
 import { canvas, Clouds } from './components/backgrounds/cloudsBg.js'
@@ -37,7 +38,7 @@ ReactDOM.render(
 
 if (document.getElementById('heroHeader')) {
   ReactDOM.render(
-    <HeroHeader borderBottom={`.5rem solid ${COLORS.yellow}`}/>,
+    <HeroHeader/>,
     document.getElementById('heroHeader')
   )
 }
