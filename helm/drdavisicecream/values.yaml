@@ -6,7 +6,7 @@ image:
   tag: ""
 
 containerPort: 3034
-regionCode:
+regionCode: ""
 replicaCount: 1
 resources:
   requests:
