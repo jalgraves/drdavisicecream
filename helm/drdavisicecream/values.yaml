@@ -1,0 +1,16 @@
+image:
+  name: drdavisicecream
+  repository: jalgraves/drdavisicecream
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+containerPort: 3034
+regionCode:
+replicaCount: 1
+resources:
+  requests:
+    cpu: 25m
+    memory: 100Mi
+  limits:
+    memory: 1Gi

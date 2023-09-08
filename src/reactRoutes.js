@@ -1,25 +1,16 @@
 import React from "react"
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom"
-import { MainInfo, AboutInfo, ContactInfo } from './components/content/main'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { AboutInfo, MainInfo, PepperellContactInfo } from './components/content/index.js'
 
-export default function Routes() {
-    return (
-        <Router>
-            <Switch>
-                <Route exact path="/">
-                    <MainInfo />
-                </Route>
-                <Route path="/about">
-                    <AboutInfo />
-                </Route>
-                <Route path="/contact">
-                    <ContactInfo />
-                </Route>
-            </Switch>
-        </Router>
-    )
+export default function ReactRoutes() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainInfo/>} />
+        <Route path="/index" element={<MainInfo/>} />
+        <Route path="/about" element={<AboutInfo/>} />
+        <Route path="/contact" element={<PepperellContactInfo/>} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
