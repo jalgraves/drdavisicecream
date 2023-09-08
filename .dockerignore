@@ -6,3 +6,8 @@ README.md
 .gitignore
 .eslintrc
 .eslint.json
+.tool-versions
+LICENSE
+node_modules/
+.sass-cache/
+.circleci/
