@@ -4,11 +4,11 @@ metadata:
   name: {{ include "drdavisicecream.fullname" . }}
 spec:
   ports:
-  - name: tcp-drdavisicec
+  - name: "http-{{ .Values.containerPort }}"
     port: {{ .Values.containerPort }}
-    targetPort: {{ .Values.containerPort }}
+    targetPort: {{ include "drdavisicecream.targetPort" . }}
   - name: http
     port: 80
-    targetPort: {{ .Values.containerPort }}
+    targetPort: {{ include "drdavisicecream.targetPort" . }}
   selector:
     app: {{ include "drdavisicecream.fullname" . }}

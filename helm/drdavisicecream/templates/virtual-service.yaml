@@ -8,8 +8,8 @@ spec:
   hosts:
   - "{{ include "drdavisicecream.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local"
   - "{{ include "drdavisicecream.fullname" . }}.{{ .Values.regionCode }}.{{ .Release.Namespace }}.aws.beantownpub.com"
-  - "drdavisicecream-brookline.com"
-  - "www.drdavisicecream-brookline.com"
+  - "drdavisicecream.com"
+  - "www.drdavisicecream.com"
 
   gateways:
   - istio-system/web-gateway
@@ -21,4 +21,10 @@ spec:
           number: {{ .Values.containerPort }}
         host: "{{ include "drdavisicecream.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local"
         subset: {{ include "drdavisicecream.fullname" . }}
+      headers:
+        response:
+          remove:
+          - "x-envoy-upstream-service-time"
+          - "x-powered-by"
+          - "x-envoy-upstream-service-time"
 {{- end }}

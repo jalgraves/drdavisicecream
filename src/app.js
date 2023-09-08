@@ -10,7 +10,6 @@ import { fileURLToPath } from 'url'
 import * as indexRouter from './routes/index.js'
 import * as usersRouter from './routes/users.js'
 
-
 const app = express()
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)

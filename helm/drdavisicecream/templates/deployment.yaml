@@ -4,14 +4,14 @@ metadata:
   name: {{ include "drdavisicecream.fullname" . }}
 spec:
   progressDeadlineSeconds: 600
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: {{ include "drdavisicecream.fullname" . }}
   strategy:
     rollingUpdate:
-      maxSurge: 1
+      maxSurge: 2
       maxUnavailable: 0
     type: RollingUpdate
   template:
@@ -30,7 +30,7 @@ spec:
       {{- end }}
         ports:
         - containerPort: {{ .Values.containerPort }}
-          name: tcp-frontend
+          name: {{ include "drdavisicecream.targetPort" . }}
           protocol: TCP
         securityContext:
           allowPrivilegeEscalation: false

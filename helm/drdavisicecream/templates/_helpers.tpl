@@ -31,6 +31,10 @@ Create chart name and version as used by the chart label.
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
+{{- define "drdavisicecream.targetPort" -}}
+{{- printf "http-%s" (include "drdavisicecream.name" .) | trunc 15 | trimSuffix "-" -}}
+{{- end -}}
+
 {{/*
 Common labels
 */}}

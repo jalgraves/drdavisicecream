@@ -18,6 +18,7 @@ Dr. Davis Ice Cream site deployment
 | image.repository | string | `"jalgraves/drdavisicecream"` |  |
 | image.tag | string | `""` |  |
 | regionCode | string | `nil` |  |
+| replicaCount | int | `1` |  |
 | resources.limits.memory | string | `"1Gi"` |  |
 | resources.requests.cpu | string | `"25m"` |  |
 | resources.requests.memory | string | `"100Mi"` |  |

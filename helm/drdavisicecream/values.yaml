@@ -7,6 +7,7 @@ image:
 
 containerPort: 3034
 regionCode:
+replicaCount: 1
 resources:
   requests:
     cpu: 25m
