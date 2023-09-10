@@ -1,11 +1,17 @@
 import React from 'react'
 import { ContentSection } from './contentBlocks/index.js'
-import { Map, BrooklineMap } from './map.js'
-import { HeroHeader } from './heroHeader/main.js'
+import { PhotoGallery } from './photoGallery/index.js'
 
 import { config } from '../../utils/main.js'
 const COLORS = config.colors
 const FONTS = config.fonts
+
+const images = [
+  "docs_front_filtered.jpg",
+  "docs_ice_cream_cake.jpg",
+  "docs_brownie_sundae.jpg",
+  "docs_fountain.jpg"
+]
 
 export const MainInfo = () => {
   return (
@@ -47,15 +53,17 @@ export const MainInfo = () => {
         h3TextShadow="rgb(0, 0, 0) 2px 2px 6px;"
         h3Margin="auto"
         margin="2rem auto 2rem auto"
+        maxWidth="90vw"
         outline={`.2rem solid ${COLORS.primaryYellow}`}
         padding="2rem"
         textAlign="center"
-        width="80vw"
+        width="100%"
       >
         <h1>Doc's Pepperell</h1>
         <h2>67 Hollis Street<br />Pepperell MA, 01463</h2>
         <h3>Now Open!</h3>
         <h2>Hours 12 to 9 Daily</h2>
+        <PhotoGallery images={images} />
       </ContentSection>
   )
 }
