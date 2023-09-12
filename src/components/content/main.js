@@ -10,7 +10,12 @@ const images = [
   "docs_front_filtered.jpg",
   "docs_ice_cream_cake.jpg",
   "docs_brownie_sundae.jpg",
-  "docs_fountain.jpg"
+  "docs_fountain.jpg",
+  "docs_sundaes_and_splits.jpg",
+  "docs_pouring_mix.jpg",
+  "docs_banana_split.jpg",
+  "docs_funbrella.jpg",
+  "docs_makingicecream.jpg"
 ]
 
 export const MainInfo = () => {

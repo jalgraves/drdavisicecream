@@ -27,6 +27,8 @@ RUN npx webpack --config webpack.config.js && \
     rm -rf node_modules
 
 FROM node:18.16.0-buster-slim
+ARG node_env
+ENV NODE_ENV=${node_env}
 
 ENV TINI_VERSION v0.19.0
 

@@ -26,7 +26,7 @@ const server = http.createServer(app.default)
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port, () => console.log(`listening on - http://localhost:${port}`))
+server.listen(port, () => console.log(`listening on - http://localhost:${port}\nNODE_ENV - ${process.env.NODE_ENV}`))
 server.on('error', onError)
 server.on('listening', onListening)
 
@@ -87,5 +87,4 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port
   debug('Listening on ' + bind)
-  debug(`Env: ${process.env}`)
 }

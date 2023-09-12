@@ -4,11 +4,20 @@ import { config } from '../../../utils/index.js'
 
 const COLORS = config.colors
 const FONTS = config.fonts
+const STATIC_PATH = `${config.urls.static}/img/slider`
+
+const photoStyles = {
+  padding: "1rem",
+  display: "flex"
+}
+
+const imgStyles = {
+  maxWidth: "250px",
+  borderRadius: "12px",
+  margin: "auto"
+}
 
 export const HeroHeader = () => {
-  const year = new Date().getFullYear()
-  const gitHash = process.env.GIT_HASH
-  const version = process.env.VERSION
   return (
     <ContentSection
       ariaDetails="HeroHeader"
@@ -19,7 +28,7 @@ export const HeroHeader = () => {
       fontSize="150%"
       h1Color={COLORS.yellow}
       h1FontFamily={FONTS.script}
-      h1FontSize="2.5rem"
+      h1FontSize="2.75rem"
       h1FontWeight="900"
       h1LineHeight="150%"
       h1Margin="auto"
@@ -47,6 +56,9 @@ export const HeroHeader = () => {
         <img src={`${config.urls.static}/img/logos/drdavisicecream_second_logo.gif`}  alt="Doc's ice cream logo" />
         <h1>Making and serving our own ice cream for over 80 years!</h1>
         <h2>Home of the Doc's Special</h2>
+        <div style={photoStyles}>
+          <img style={imgStyles} src={`${STATIC_PATH}/docs_special.jpg`}  alt="Doc's Special Sundae" />
+        </div>
       </header>
     </ContentSection>
   )

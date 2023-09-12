@@ -10,7 +10,6 @@ router.use(function (req, res, next) {
 
 router.get('/', function(req, res, next) {
   const home = sections.home
-  console.log(home)
   res.render(home.template, home.metadata)
 })
 
