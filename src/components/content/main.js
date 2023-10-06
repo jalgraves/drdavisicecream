@@ -1,6 +1,7 @@
 import React from 'react'
-import { ContentSection } from './contentBlocks/index.js'
+
 import { PhotoGallery } from './photoGallery/index.js'
+import { ContentSection } from "@jalgraves/react-components-library"
 
 import { config } from '../../utils/main.js'
 const COLORS = config.colors
@@ -23,7 +24,7 @@ export const MainInfo = () => {
       <ContentSection
         ariaDetails="MainInfo"
         articleMargin="auto"
-        backgroundColor="rgba(248, 248, 248, 0.5)"
+        bgcolor="rgba(248, 248, 248, 0.5)"
         borderRadius="4px"
         display="flex"
         flexFlow="column wrap"
@@ -72,10 +73,6 @@ export const MainInfo = () => {
       </ContentSection>
   )
 }
-
-
-
-
 
 export const ErrorPage = () => {
   return (

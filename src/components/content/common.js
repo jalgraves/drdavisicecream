@@ -1,6 +1,6 @@
 import React from 'react'
 import { SocialNav } from './social.js'
-import { ContentSection } from './contentBlocks/index.js'
+import { ContentSection } from "@jalgraves/react-components-library"
 import {
   StyledAnchor,
   StyledLinkButton,

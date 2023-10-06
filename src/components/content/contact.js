@@ -1,17 +1,15 @@
 import React from 'react'
-import { ContentSection } from './contentBlocks/index.js'
+import { ContentSection } from "@jalgraves/react-components-library"
 import { config } from '../../utils/main.js'
-import { Map, BrooklineMap } from './map.js'
 
 const COLORS = config.colors
 const FONTS = config.fonts
 
 export const PepperellContactInfo = () => {
-  const apiKey = process.env.GOOGLE_API_KEY
   return (
     <div>
       <ContentSection
-        backgroundColor="transparent"
+        bgcolor="transparent"
         borderRadius="4px"
         display="flex"
         flexFlow="column wrap"
@@ -54,26 +52,16 @@ export const PepperellContactInfo = () => {
           <p>67 Hollis Street<br />Pepperell MA, 01463</p>
         </section>
       </ContentSection>
-      <ContentSection backgroundColor="transparent" padding="1rem" margin="auto">
-      <Map
-        isMarkerShown
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`}
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `225px`, maxWidth: `80%`, margin: `auto` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-      />
-      </ContentSection>
     </div>
   )
 }
 
 export const BrooklineContactInfo = () => {
-  const apiKey = process.env.GOOGLE_API_KEY
   return (
     <div>
       <ContentSection
         marginTop="1rem"
-        bgColor="transparent"
+        bgcolor="transparent"
         h1Color={COLORS.yellow}
         h1LetterSpacing=".3rem"
         h1TextTransform="uppercase"
@@ -88,15 +76,6 @@ export const BrooklineContactInfo = () => {
           <p>Address</p>
           <h2>75 Route 13 <br />Brookline, NH 03033</h2>
         </section>
-      </ContentSection>
-      <ContentSection bgColor="transparent">
-        <BrooklineMap
-          isMarkerShown
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`}
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `225px`, maxWidth: `80%` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
       </ContentSection>
     </div>
   )

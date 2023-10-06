@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContentSection } from './contentBlocks/index.js'
+import { ContentSection } from "@jalgraves/react-components-library"
 import { config } from '../../utils/main.js'
 const COLORS = config.colors
 const FONTS = config.fonts
@@ -37,7 +37,7 @@ const FAQ = () => {
     >
       <article>
         <h1>Frequently Asked Questions</h1>
-        <h2>Do you accept credit cards yes?</h2>
+        <h2>Do you accept credit cards?</h2>
         <p>Yes.</p>
         <h2>Do you have a public restroom?</h2>
         <p>Unfortunately we do not, please plan accordingly.</p>
