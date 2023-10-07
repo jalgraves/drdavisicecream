@@ -13,6 +13,7 @@ const photoStyles = {
 
 const imgStyles = {
   maxWidth: "250px",
+  border: `.5rem solid ${COLORS.red}`,
   borderRadius: "12px",
   margin: "auto"
 }

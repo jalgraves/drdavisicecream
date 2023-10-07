@@ -1,6 +1,6 @@
-import React from 'react'
-import { SocialIcon } from '../icons.js'
-import { config } from '../../utils/main.js'
+import React from "react"
+import { Icon } from "@jalgraves/react-components-library"
+import { config } from "../../utils/main.js"
 const urls = config.urls
 
 const iconStyle = {
@@ -12,9 +12,9 @@ const iconStyle = {
 export const SocialNav = () => {
   return (
     <nav style={{margin: '1rem auto'}}>
-      <a href={urls["facebook"]}><SocialIcon iconName="faFacebook" style={iconStyle} /></a>
-      <a href={urls["instagram"]}><SocialIcon iconName="faInstagram" style={iconStyle} /></a>
-      <a href={urls["twitter"]}><SocialIcon iconName="faTwitter" style={iconStyle} /></a>
+      <a href={urls["facebook"]}><Icon iconName="faFacebook" style={iconStyle} /></a>
+      <a href={urls["instagram"]}><Icon iconName="faInstagram" style={iconStyle} /></a>
+      <a href={urls["twitter"]}><Icon iconName="faTwitter" style={iconStyle} /></a>
     </nav>
   )
 }
