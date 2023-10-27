@@ -69,6 +69,10 @@ publish/latest:
 docker/prune:
 	docker builder prune -a --force
 
+## gifsicle
+gifsicle:
+	gifsicle -i dist/public/images/drdavisicecream_second_logo.gif -O3 --colors 256 -o drdavisicecream_second_logo-opt.gif
+
 ## Show available commands
 help:
 	@printf "Available targets:\n\n"

@@ -8,15 +8,15 @@ const COLORS = config.colors
 const FONTS = config.fonts
 
 const images = [
-  "docs_front_filtered.jpg",
-  "docs_ice_cream_cake.jpg",
-  "docs_brownie_sundae.jpg",
-  "docs_fountain.jpg",
-  "docs_sundaes_and_splits.jpg",
-  "docs_pouring_mix.jpg",
-  "docs_banana_split.jpg",
-  "docs_funbrella.jpg",
-  "docs_makingicecream.jpg"
+  "docs_front_filtered@250px.jpg",
+  "docs_ice_cream_cake@250px.jpg",
+  "docs_brownie_sundae@250px.jpg",
+  "docs_fountain@250px.jpg",
+  "docs_sundaes_and_splits@250px.jpg",
+  "docs_pouring_mix@250px.jpg",
+  "docs_banana_split@250px.jpg",
+  "docs_funbrella@250px.jpg",
+  "docs_making_ice_cream@250px.jpg"
 ]
 
 export const MainInfo = () => {
@@ -24,7 +24,7 @@ export const MainInfo = () => {
       <ContentSection
         ariaDetails="MainInfo"
         articleMargin="auto"
-        bgcolor="rgba(248, 248, 248, 0.5)"
+        backgroundColor="rgba(248, 248, 248, 0.5)"
         borderRadius="4px"
         display="flex"
         flexFlow="column wrap"
@@ -40,7 +40,7 @@ export const MainInfo = () => {
         h1TextTransform="uppercase"
         h1TextShadow="rgb(0, 0, 0) 2px 2px 6px;"
         h2Color={COLORS.black}
-        h2FontFamily={FONTS.content}
+        h2FontFamily="'Raleway',Arial,sans-serif"
         h2FontSize="2rem"
         h2FontWeight="600"
         h2TextAlign="left"
@@ -60,7 +60,7 @@ export const MainInfo = () => {
         h3Margin="auto"
         margin="2rem auto 2rem auto"
         maxWidth="90vw"
-        outline={`.2rem solid ${COLORS.primaryYellow}`}
+        outline={`.3rem solid ${COLORS.primaryYellow}`}
         padding="2rem"
         textAlign="center"
         width="100%"

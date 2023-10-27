@@ -36,8 +36,8 @@ export const HeroHeader = () => {
       h1Padding=".5rem"
       h1LetterSpacing=".3rem"
       h1TextShadow="rgb(0, 0, 0) 2px 2px 6px"
-      h2Color={COLORS.cyan}
-      h2FontFamily={FONTS.button}
+      h2Color={COLORS.red}
+      h2FontFamily={FONTS.headline}
       h2FontSize="2.5rem"
       h2FontWeight="900"
       h2LetterSpacing=".3rem"
@@ -53,14 +53,16 @@ export const HeroHeader = () => {
       textAlign="center"
       width="100vw"
     >
-      <header>
-        <img src={`${config.urls.static}/img/logos/drdavisicecream_second_logo.gif`}  alt="Doc's ice cream logo" />
+        <picture>
+          <source media="(min-width: 400px)" srcSet={`${config.urls.static}/img/logos/drdavisicecream_second_logo.gif`} />
+          <img src={`${config.urls.static}/img/logos/drdavisicecream_second_logo_small.gif`} alt="Dr. Davis Ice Cream logo" />
+        </picture>
         <h1>Making and serving our own ice cream for over 80 years!</h1>
         <h2>Home of the Doc's Special</h2>
         <div style={photoStyles}>
-          <img style={imgStyles} src={`${STATIC_PATH}/docs_special.jpg`}  alt="Doc's Special Sundae" />
+          <img style={imgStyles} src={`${STATIC_PATH}/docs_special@240px.jpg`}  alt="Doc's Special Sundae" />
         </div>
-      </header>
+
     </ContentSection>
   )
 }

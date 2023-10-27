@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createRoot } from "react-dom/client"
 import { HeroHeader } from './components/content/heroHeader/index.js'
 import { Footer } from './components/content/footer/index.js'
 import ReactRoutes from './reactRoutes.js'
@@ -20,6 +21,15 @@ const IMG_STYLES = {
   top: "1rem"
 }
 
+// const container = document.getElementById("app")
+// const footerContainer = document.getElementById("footer")
+// const topBarContainer = document.getElementById("topBar")
+// const app = createRoot(container)
+// const footer = createRoot(footerContainer)
+// const topBar = createRoot(topBarContainer)
+
+
+
 ReactDOM.render(
   <MainMenuBar
     pages={PAGES}
@@ -35,8 +45,8 @@ ReactDOM.render(
     slideMenuLinkListBorder={`.1rem solid ${COLORS.navBarBlue}`}
     slideMenuLinkListBorderRadius="4px"
     hoverColor={COLORS.yellow}
-    mainMenuBarImgSource={`${config.static_url}/img/logos/drdavisicecream_navbar_logo.gif`}
-    slideMenuLogoImgSource={`${config.static_url}/img/logos/drdavisicecream_logo.png`}
+    mainMenuBarImgSource={`${config.static_url}/img/logos/docs_navbar_logo@450px.gif`}
+    slideMenuLogoImgSource={`${config.static_url}/img/logos/docs_logo@255px.png`}
   />,
   document.getElementById("topBar")
 )
