@@ -43,7 +43,6 @@ build: sass
 		-t $(image_name):$(image_tag) \
 		--build-arg node_env=$(node_env) \
 		--build-arg git_hash=$(git_hash) \
-		--build-arg google_api_key=${GOOGLE_API_KEY} \
 		--build-arg version=$(version) .
 
 ## Start docker container
