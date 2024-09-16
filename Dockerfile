@@ -19,9 +19,10 @@ ENV GOOGLE_API_KEY=${google_api_key}
 ENV VERSION=${version}
 
 COPY ./package* /app/
-COPY ./.npmrc /app/
+#COPY ./.npmrc /app/
 WORKDIR /app
-RUN npm ci --save-dev --production=false
+#RUN npm ci --save-dev --production=false
+RUN --mount=type=secret,id=npmrc,target=/app/.npmrc npm ci --save-dev --production=false --legacy-peer-deps
 COPY . ./
 
 RUN npx webpack --config webpack.config.js && \
@@ -34,9 +35,9 @@ ENV VERSION=${version}
 ENV TINI_VERSION v0.19.0
 
 COPY ./package* /app/
-COPY ./.npmrc /app/
+#COPY ./.npmrc /app/
 WORKDIR /app
-RUN npm ci --production || npm ci --production
+RUN --mount=type=secret,id=npmrc,target=/app/.npmrc npm ci --production --legacy-peer-deps
 COPY . ./
 COPY --from=install /app/dist/public/js/main.js /app/dist/public/js/
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini

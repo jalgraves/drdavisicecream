@@ -40,6 +40,7 @@ build: sass
 	@echo "\033[1;32mNode Env: $(node_env)\033[1;37m\n"
 	docker build \
 		--platform linux/amd64 \
+		--secret id=npmrc,src=.npmrc \
 		-t $(image_name):$(image_tag) \
 		--build-arg node_env=$(node_env) \
 		--build-arg git_hash=$(git_hash) \
