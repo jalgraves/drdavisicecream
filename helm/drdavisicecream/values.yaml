@@ -5,12 +5,17 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
+aws:
+  regionCode:
+istio:
+  enabled: true
 containerPort: 3034
-regionCode: ""
 replicaCount: 1
 resources:
   requests:
-    cpu: 25m
     memory: 100Mi
   limits:
     memory: 1Gi
+
+global:
+  env:

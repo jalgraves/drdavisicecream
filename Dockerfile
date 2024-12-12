@@ -15,7 +15,6 @@ ARG node_env
 ARG version
 ENV GIT_HASH=${git_hash}
 ENV NODE_ENV=${node_env}
-ENV GOOGLE_API_KEY=${google_api_key}
 ENV VERSION=${version}
 
 COPY ./package* /app/
@@ -32,7 +31,7 @@ FROM node:18.16.0-buster-slim
 ARG node_env
 ENV NODE_ENV=${node_env}
 ENV VERSION=${version}
-ENV TINI_VERSION v0.19.0
+ENV TINI_VERSION=v0.19.0
 
 COPY ./package* /app/
 #COPY ./.npmrc /app/

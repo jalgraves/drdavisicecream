@@ -2,7 +2,6 @@
 
 name ?= drdavisicecream
 image ?= drdavisicecream
-tag ?= $(shell grep 'appVersion:' Chart.yaml | cut -f 2 -d' ')
 
 ifeq ($(env),dev)
 	context = ${DEV_CONTEXT}
@@ -10,15 +9,19 @@ ifeq ($(env),dev)
 else ifeq ($(env),prod)
 	context = ${PROD_CONTEXT}
 	namespace = ${PROD_NAMESPACE}
+	region_code = ${PROD_REGION_CODE}
 endif
 
 context:
 	kubectl config use-context $(context)
 
-## Install app on K8s cluster
+## Install Helm chart
 helm/install:
-	helm upgrade --install $(name) helm/$(name)/ \
+	helm upgrade --install $(name) helm/drdavisicecream/ \
+		--kubeconfig="${HOME}"/.kube/$(kubeconfig) \
 		--namespace $(namespace) \
+		--set image.tag=$(image_tag) \
+		--set aws.regionCode=$(region_code) \
 		--set global.env=$(env) \
 		--debug
 
