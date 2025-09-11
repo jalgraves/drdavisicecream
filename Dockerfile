@@ -1,4 +1,4 @@
-FROM node:18.16.0-buster-slim AS build
+FROM node:22.6.0-bullseye-slim AS build
 
 RUN apt-get update  && \
     apt-get install -y \
@@ -10,7 +10,6 @@ RUN apt-get update  && \
 
 FROM build AS install
 ARG git_hash
-ARG google_api_key
 ARG node_env
 ARG version
 ENV GIT_HASH=${git_hash}
@@ -27,8 +26,9 @@ COPY . ./
 RUN npx webpack --config webpack.config.js && \
     rm -rf node_modules
 
-FROM node:18.16.0-buster-slim
+FROM node:22.6.0-bullseye-slim
 ARG node_env
+ARG version
 ENV NODE_ENV=${node_env}
 ENV VERSION=${version}
 ENV TINI_VERSION=v0.19.0
