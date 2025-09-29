@@ -67,10 +67,8 @@ export const MainInfo = () => {
       >
         <h1>Doc's Pepperell</h1>
         <h2>67 Hollis Street<br />Pepperell MA, 01463</h2>
-        <h3>Now Open!</h3>
-        <h2>Hours</h2>
-        <h2>Monday through Friday 2:00 to 8pm</h2>
-        <h2>Saturday and Sunday 12:00 to 8pm</h2>
+        <h3>Closed for the season, see you in the Spring!</h3>
+        
         <PhotoGallery images={images} />
       </ContentSection>
   )
